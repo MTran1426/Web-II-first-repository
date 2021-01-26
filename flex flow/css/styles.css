@@ -1,0 +1,58 @@
+body {
+    color: #fff;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 16px;
+}
+
+.flex
+{
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+}
+
+h2 {
+    background-color: #008ecc;
+    font-size: 24px;
+    padding: 8px 16px;
+}
+
+.item {
+    border: 1px solid #fff;
+    margin: 0 16px 16px;
+}
+
+.content {
+    padding: 16px;
+}
+
+
+
+.flex-container
+{
+    display: flex;
+    /*max-width: 750px;*/
+    /**flex-direction only allows for one value whereas flex-flow allows for two**/
+    flex-flow: row; /** default state**/
+    /*flex-flow: row-reverse;
+    flex-flow: column;
+    flex-flow: column-reverse;*/
+
+    /** flex-wrap will allow for one value whereas flex-flow allows for two**/
+    flex-flow: nowrap;
+    flex-flow: wrap;
+    flex-flow: wrap-reverse;
+
+    /** flex-direction & flex-wrap together **/
+    flex-flow: row nowrap;
+    flex-flow: row-reverse wrap;
+    flex-flow: column-reverse wrap-reverse;
+    flex-flow: nowrap column;
+}
+

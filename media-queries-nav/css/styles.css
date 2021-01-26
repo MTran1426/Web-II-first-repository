@@ -1,0 +1,7 @@
+/** generic css goes first. This CSS applies to all screens
+	widths unless it's overwritten in a media query **/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+

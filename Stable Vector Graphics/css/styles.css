@@ -1,0 +1,30 @@
+section
+{
+	padding: 0 0.75rem;
+}
+
+.svg
+{
+	width: 75px;
+	height: 75px;
+	padding: 1rem; /** 1rem = 16px **/
+	border-radius: 4px;
+}
+
+svg
+{
+	width: 75px;
+	height: 75px;
+	padding: 1rem;
+	border-radius: 4px;
+}
+
+svg path
+{
+	fill: orange;
+}
+
+.svg:hover,svg:hover
+{
+	box-shadow: 2px 2px 3px #ccc;
+}
