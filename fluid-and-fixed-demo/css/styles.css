@@ -1,0 +1,88 @@
+/** Generic CSS, mobile first therefore elements fit edge to edge
+	and will grow as the screen increases. **/
+body
+{
+	/** add base body font properties here **/
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-family: sans-serif;
+	text-transform: uppercase;
+}
+
+img
+{
+	max-width: 100%;
+}
+
+header,footer
+{
+	background-color: #115194;
+	margin-bottom: 24px;
+}
+
+header > h1
+{
+	padding: 48px;
+}
+
+nav
+{
+	background-color: #4bb19d;
+	padding: 16px;
+}
+
+.banner
+{
+	background-color: #b8bAC3;
+	margin-bottom: 24px;
+	padding: 288px 16px;
+}
+
+.promo
+{
+	background-color: #b0d892;
+	padding: 128px 16px;
+	/** liquid or fluid layouts is done in % so they grow or shrink with 
+		the screen window/viewport **/
+	width: 100%;
+	/** three columns across, each would be 33.33% but if we make them
+		32% each, there will be 4% space left over for gutter spacing **/	
+	margin-bottom: 24px;
+}
+
+footer
+{
+	padding: 48px;
+}
+
+.flex-container
+{
+	display: flex;
+	justify-content: space-between;
+	flex-flow: column;
+}
+
+
+@media screen and (min-width: 1366px)
+{
+	/** The css rules here will only apply to screens 1366 and up **/
+	.container
+	{
+		/** The width of the container should be smaller or the
+			same size as your min-width condition to allow for 
+			margins left and right. **/
+		width: 1200px;
+		margin: auto;
+	}
+
+	.flex-container
+	{
+		flex-flow: row;
+	}
+
+	.promo
+	{
+		width: 32%;
+	}
+}
