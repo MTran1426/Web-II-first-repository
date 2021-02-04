@@ -1,0 +1,86 @@
+.flex-container
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+section
+{
+	padding: 3rem; /**48px**/
+	/*color: #fff;*/
+	font-size: 2rem; /**32px**/
+	text-align: center;
+}
+
+/** :nth child selector - select elements based on their position
+	as a child in any parent element. **/
+
+section:first-child
+{
+	background-color: crimson;
+}
+
+section:last-child
+{
+	background-color: steelblue;
+}
+
+section:nth-child(2)
+{
+	background-color: tomato;
+}
+
+section:nth-child(3)
+{
+	background-color: khaki;
+}
+
+section:nth-last-child(3)
+{
+	background-color: lightgreen;
+}
+
+/** can go forwards or backwards **/
+section:nth-last-child(2),
+section:nth-child(5)
+{
+	background-color: lightseagreen;
+}
+
+/** the section inside the footer element is both the 
+	first child and the last child of the parent element.
+	Its also the only section on the page that is an only
+	child. 
+**/
+
+section:only-child
+{
+	background: whitesmoke;
+}
+
+/** nth of type selectors - select the elements based on their 
+	position as a child as that type of selector
+**/
+
+/** the nth of type selector will work to select our paragraph 
+	elements
+**/
+/** targets the first paragraph in each section **/
+p:first-of-type
+{
+	font-family: sans-serif;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px gainsboro;
+}
+
+p:last-of-type
+{
+	font-family: sans-serif;
+	font-size: 1rem;
+}
+
+p:nth-of-type(2)
+{
+	display: none;
+}
