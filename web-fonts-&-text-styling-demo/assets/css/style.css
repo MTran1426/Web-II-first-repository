@@ -1,0 +1,134 @@
+/** mobile and general styling first **/
+
+body{
+    font-family:'Josefin Sans', sans-serif;
+    font-size: 100.125%; /** 18px **/
+    color: #323232;
+}
+
+/** Typography **/
+@font-face{
+    font-family: 'dancing_script_otregular';
+    src: url('fonts/dancingscript-regular-webfont.woff2') format('woff2'),
+         url('fonts/dancingscript-regular-webfont.woff') format('woff');
+         display: swap;
+}
+
+
+.container {
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/** header **/
+header {
+    background-color: #2a314a;
+}
+
+header > .container {
+    padding: 2%;
+    flex-direction: column;
+}
+
+h1,
+h2{
+    font-family: 'dancing_script_otregular';
+}
+
+/** logo **/
+.logo {
+    display: block;
+    width: 6rem;
+    height: auto;
+    margin-bottom: 2.4rem;
+}
+
+/** nav **/
+.main-menu { 
+    display:flex;
+    flex-flow: column;
+}
+
+.main-menu a {
+    color: #b5d8f5;
+    text-transform: uppercase; 
+    letter-spacing: 0.1rem; /*** spaces out letters **/
+}
+
+
+/*** content area **/
+
+section > .container {
+    flex-direction: column;
+}
+
+/** spaces out words, similar to letter-spacing effect **/
+.word-spacing{
+    word-spacing: 1rem;
+}
+
+/** located on the font-pairings paragraph **/
+/** font-variant specifies whether a font is written in small-caps
+or not**/
+.font-variant{
+    font-variant: small-caps;
+}
+
+.text-shadow{
+    /** offset-x v| offset-y | blur | color **/
+    text-shadow: 0.1rem 0.1rem 0.2rem #8aaacd;
+}
+
+section:nth-of-type(3) p:first-letter{
+    font-size: 5rem; /**50px **/
+    text-transform: uppercase;
+}
+
+/** this shouldnt be used on websites, primary use is for print/
+publication design **/
+.text-indenting{
+    text-indent: 2rem;
+}
+
+/** using ::before and/or ::after pseudo **/
+
+
+
+section:nth-of-type(4) h2::before{
+    content: '';/** this need to be added to see your element that's
+    been added to the html **/
+    border-left: 0.3rem solid #617da1;
+    display: block;
+    width: 2rem;
+    height: 4rem;
+    vertical-align: middle;
+    margin-bottom: 0.5rem;
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** visually hidden **/
+/** hides the text visually, but its available to screen readers
+http://snook.ca/archives/html_and_css/hiding-content-for-accessibility **/
+.visuallyhidden {
+    border: 0;
+    height: 0.1rem;
+    margin: -0.1rem;
+    overflow: hidden;
+    padding: 0;
+    width: 0.1rem;
+    position: absolute;
+}

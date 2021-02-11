@@ -1,0 +1,30 @@
+.inner-container {
+    max-width: 60rem;
+    margin: 0 auto;
+    background-color: lightgrey;
+  }
+  
+  .col-group {
+    display: flex;
+  }
+  
+  .col {
+    background-color: mediumslateblue;
+    color: white;
+    margin: 0 0.5rem;
+    padding: 1rem;
+  /*   shorthand for no grow, yes shrink, auto content width */
+  /*   default value */
+    flex: 0 1 auto;
+    
+  /*   shorthand for yes grow, yes shrink, auto content width */
+    flex: 1 1 auto;
+    
+  /*   shorthand for no grow, no shrink, auto content width */
+    flex: 0 0 auto;
+    
+  /*   shorthand for yes grow, yes shrink, no auto content -> be equal width */
+    flex: 1 1 0;
+    
+    flex: 1 1 25%;
+  }
