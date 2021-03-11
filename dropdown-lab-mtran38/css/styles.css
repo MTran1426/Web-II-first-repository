@@ -1,0 +1,140 @@
+body {
+	font-family: rubikitalic, sans-serif;
+}
+
+header{
+	background-color: #191919;
+}
+
+
+/** Step 1: Style all the menu links starting from the smallest
+viewport **/
+
+/** all text styling gets applied to anchor tag (<a>) to 
+overwrite any browser styles. Layout goes on the list items **/
+
+.menu a{
+	color: #fefefe;
+	text-transform: uppercase;
+	text-decoration: none;
+	/** add padding here vs li **/
+	padding: 1rem;
+	/** expand the clickable area **/
+	display: block;
+
+	text-decoration: underline;
+	text-underline-position: under;
+	/** test to show you the clickable area **/
+	/** border: 1px solid white; **/
+}
+
+/*
+.menu li:hover,
+.menu li:active {
+	background-color: #fefefe;
+} */
+
+.menu a:hover,
+.menu a:active {
+	color: #191919;
+	background-color: #ccc;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+}
+
+/** hide the svgs on mobile **/
+svg {display: none;}
+
+.dropdown li {
+	margin-left: 1rem;
+	padding: 0;
+}
+
+.dropdown a {
+	text-decoration: none;
+}
+
+/** 640px **/
+@media screen and (min-width: 40rem){
+
+	@font-face{
+		font-family: 'rubikitalic';
+		src: url('../font/rubik-italic-webfont.woff') format('woff'),
+		 	 url('../font/rubik-italic-webfont.woff2') format('woff2');
+	}
+
+	.menu {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.menu li {
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: auto; /** grow shrink flex-basis **/
+		position: relative; /** allows us to position our dropdowns
+		absolutely but relative to element **/
+		white-space: nowrap;
+	}
+
+	.menu li a {
+		padding: 0.5rem;
+	}
+
+	/**svg**/
+	svg {
+		display: block;
+		width: 1rem;
+		margin-left: 0.75rem;
+	}
+
+	svg path {
+		fill: #fefefe;
+	}
+
+	li.arrow > a {
+		display: flex;
+		align-items: center;
+	}
+	/** step 2: position and hide the dropdown **/
+	.dropdown {
+		background-color: #191919;
+		border-radius: 0 0 0.3125rem 0.3125rem;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		z-index: 1;
+	}
+
+	.dropdown li {
+		margin-left: 0;
+		text-align: left;
+	}
+
+	.dropdown a {
+		padding: 0.5rem;
+	}
+
+	/** step 3: add hover state that shows the submenu/dropdown **/
+	
+	.menu li:hover > ul {​​
+		visibility: visible;
+		opacity: 1;
+	}​​
+
+	.menu li:focus-within > ul,
+	.menu li > ul:focus {​​
+		visibility: visible;
+		opacity: 1;
+		display: block;
+	}​​
+}
+
+/**1200px**/ 
+@media screen and (min-width: 75rem) {
+	nav {
+		max-width: 75rem;
+		margin: auto;
+	}
+}

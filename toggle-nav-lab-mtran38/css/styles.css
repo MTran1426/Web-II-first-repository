@@ -1,0 +1,403 @@
+/** colours 
+- General colour scheme: https://www.color-hex.com/color-palette/809
+- background gradient: https://uigradients.com/#AzurLane
+- 
+- dk blue: #363b74;
+- pink: #ef4f91;
+- dk pink (hover): #bf3f74;
+- lt purple: #c79dd7;
+- med puprle: #673888;
+- dk purple: ##4d1b7b;
+- off-white: #ede8f1;
+
+svg circles:
+ - pink (above)
+ - yellow: #f9d62e
+ - orange: #fc913a;
+**/
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: #363b74;
+    background: linear-gradient( rgb(255,105,180),  rgb(255,186,0));
+    background: #7F7FD5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.inner-container {
+    padding: 1rem;
+}
+
+/* ******************** typography ******************** */
+
+h1 { letter-spacing: 0.1875rem; }
+
+h1 a {
+	text-decoration: none;
+	color: #363b74;
+}
+
+h1::first-letter {color: #ef4f91;}
+
+h2 {
+	font-size: 2.75rem;
+	line-height: 1.2;
+	color: #ede8f1;
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+	color: #ede8f1;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.0625rem;
+}
+
+p {
+	margin-bottom: 1.5rem;
+}
+
+a {
+	text-decoration: none;
+	display: block;
+	color: #4d1b7b;
+}
+
+svg {
+	width: 1rem;
+}
+
+/* ******************** header ******************** */
+
+header {
+	background-color: #ede8f1;
+}
+
+.menu-icon {
+	cursor: pointer;
+}
+
+.menu-icon span {
+	display: block;
+	background-color: #363b74;
+	width: 3rem;
+	height: 0.5rem;
+	border-radius: 6.25rem;
+	margin-bottom: 0.375rem;
+	position: relative;
+}
+
+.menu-icon p {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+/** toggle effect **/
+/** remove the top span element - just during the active state **/
+.active-nav .menu-icon span:first-child {
+	display: none;
+}
+
+.active-nav .menu-icon span:nth-of-type(2) {
+	transform: rotate(-45deg);
+	top: 0.5rem;
+}
+
+.active-nav .menu-icon span:last-of-type {
+	transform: rotate(45deg);
+	bottom: 0.3125rem;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/** step 1: style the li and a tags before hiding them. **/
+
+nav {
+	position: absolute;
+	background-color: #ede8f1;
+	left: 0;
+	width: 100vw;
+
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.4s ease-in-out;
+}
+
+/** special js class is append the header and to hide and show the menu we apply to the nav **/
+.active-nav nav {
+	max-height: 100vh;
+}
+
+.main-menu li {
+	margin: 0 1.5625rem;
+	line-height: 5.3125rem;
+	white-space: nowrap;
+	border-bottom: 0.0625rem solid #673888;
+}
+
+/** removes the last border for the sub-menu/dropdown **/
+.main-menu li:last-of-type {
+	border-bottom: none;
+}
+
+.main-menu a {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding-left: 0.625rem;
+}
+
+a.first-link {
+	display: flex;
+}
+
+a.first-link svg:first-of-type {
+	margin-right: 1rem;
+}
+
+/** move the svg to the right side **/
+a.first-link svg:last-of-type {
+	margin-left: auto;
+}
+
+/** step 2:  **/
+
+/** svg colors **/
+.pink-circle {fill: #ef4f91;}
+.yellow-circle {fill: #f9d62e;}
+.orange-circle {fill: #fc913a;}
+
+
+/** hide submenu **/
+.dropdown-menu {
+	visibility: hidden;
+	max-height: 0;
+	transition: all 0.4s ease-in-out;
+}
+
+/** show the dropdown menu on hover **/
+.main-menu li:hover > .dropdown-menu {
+	visibility: visible;
+	max-height: 100vh;
+}
+
+.dropdown-menu a {
+	text-transform: none;
+	color: #363b74;
+	font-weight: 700;
+	font-size: 1.125rem;
+	padding-left: 0.625rem;
+}
+
+/* ******************** Content ******************** */
+
+.banner {
+	/** background-image going to have linnea gradient as well as
+	an image to create the overlay effect **/
+	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)),
+	url('../img/home-banner-sm.jpg');
+	background-size: cover;
+	background-position: center top;
+}
+
+.banner-content {
+	background-color: rgba(77, 27, 123, 0.8);
+	text-align: center;
+	color: #ede8f1;
+	padding: 3rem 1rem;
+
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	height: 100%;
+}
+
+.banner-content a {
+	color: #ede8f1;
+	background-color: #ef4f91;
+	padding: 1rem 2rem;
+	text-transform: uppercase;
+	display: inline-block;
+	border-radius: 0.125rem;
+	transition: background-color 0.4s ease-in-out;
+}
+
+.banner-content a:hover {
+	background-color: #bf3f74;
+}
+
+/** video **/
+
+/** position the image relatively so the svg that is positioned
+	absolutely stays contained within the image **/
+
+.video {
+	position: relative;
+}
+
+.video img {
+	position: relative;
+	max-width: 100%;
+}
+
+.video svg {
+	width: 6rem;
+	position: absolute;
+	z-index: 2;
+	top: 40%;
+	left: 40%;
+}
+
+/** tutorials **/
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.col {
+	padding: 1rem;
+	margin-top: 1.5rem;
+	border-radius: 0.125rem;
+	text-align: center;
+}
+
+.col img {
+	margin-bottom: 1.5rem;
+}
+
+.col:first-of-type {
+	background-color: #c79dd7;
+}
+
+.col:nth-of-type(2) {
+	background-color: #363b74;
+}
+
+.col:nth-of-type(3) {
+	background-color: #ef4f91;
+}
+
+.col:last-of-type {
+	background-color: #4d1b7b;
+}
+
+/** medium screen **/
+@media screen and (min-width: 700px) {
+
+	/** banner **/
+	.banner {
+		background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)),
+		url('../img/home-banner-med.jpg');
+	}
+
+	.banner-content {
+		padding: 3rem 1rem 6rem;
+	}
+
+	/** video **/
+	.video img {
+		position: relative;
+		top: -4rem;
+		margin: auto;
+		left: 0;
+		right: 0;
+		max-width: 90%;
+	}
+
+	.video svg {
+		top: 25%;
+		left: 43%;
+	}
+
+	/** Tutorials section **/
+	.col {
+		width: 48%;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	.banner {
+		height: 60vh;
+	}
+
+	.banner-content {
+		padding: 7rem 1rem 6rem;
+	}
+
+	.banner-content p {
+		width: 60ch;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+
+	.inner-container {
+		max-width: 78.75rem;
+		margin: auto;
+	}
+
+	/** menu **/
+	.menu-icon {
+		display: none;
+	}
+
+	.wide-flex {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	nav {
+		position: static;
+		overflow: visible;
+		max-height: 100vh;
+		width: auto;
+	}
+
+	.main-menu {
+		display: flex;
+	}
+
+	.main-menu li {
+		border-bottom: none;
+		position: relative;
+	}
+
+	a.first-link svg:last-of-type {
+		margin-left: 0.5rem;
+
+	}
+
+	/** dropdowns **/
+
+	.dropdown-menu {
+		position: absolute;
+		left: 0;
+		background-color: #ede8f1;
+	}
+
+	/** hover state **/
+	.main-menu a:hover {
+		text-decoration: underline;
+	}
+
+	/** banner **/
+	.banner {
+		background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)),
+		url('../img/home-banner-lg.jpg');
+	}
+
+	/** tutorials area **/
+	.col {
+		width: 24%;
+	}
+
+}

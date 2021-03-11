@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo - Dropdown Menus</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header>
+		<div class="inner-container flex-container">
+			<img class="logo" src="img/logo.svg" alt="logo icon" />
+			<h1 class="visually-hidden">Very Important Heading</h1>
+			<nav>
+				<ul class="menu flex-container">
+					<li><a href="#">Home</a></li>
+					<li>
+						<a href="#">Tutorials</a>
+						<!-- first tier -->
+						<ul class="dropdown">
+							<li><a href="#">PhotoShop</a></li>
+							<li><a href="#">Illustrator</a></li>
+							<li>
+								<!-- second tier -->
+								<a class="arrow-icon" alt="arrow icon" href="#">Web Design <img src="img/arrow.svg"/></a>
+								<ul class="dropdown">
+									<li><a href="#">HTML</a></li>
+									<li><a href="#">CSS</a></li>
+								</ul>
+								<!-- end of second tier -->
+							</li>
+						</ul>
+						<!-- end of first tier -->
+					</li>
+					<li>
+						<a href="#">Aritcles</a>
+						<!-- first tier -->
+						<ul class="dropdown">
+							<li><a href="#">Web Design</a></li>
+							<li><a href="#">User Experience</a></li>
+						</ul>
+						<!-- end of first tier -->
+					</li>
+					<li><a href="#">Inspiration</a></li>
+				</ul>
+			</nav>
+			<a class="btn" href="#">Sign Up</a>
+		</div>
+	</header>
+    
+    
+</body>
+</html>
